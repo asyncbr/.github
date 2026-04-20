@@ -1,0 +1,14 @@
+name: AI Orchestrator Trigger
+description: Connects this project to the Central AI Ops Center.
+
+on:
+  repository_dispatch:
+    types: [ai_task_trigger]
+
+jobs:
+  call-ai-ops:    
+    uses: asyncbr/ai-ops-center/.github/workflows/reusable-claude-task.yml@main
+    with:
+      prompt: ${{ github.event.client_payload.prompt }}
+      task_name: ${{ github.event.client_payload.task_name }}
+    secrets: inherit # Automatically passes the Org-level Anthropic key

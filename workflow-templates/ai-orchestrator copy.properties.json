@@ -1,0 +1,9 @@
+{
+  "name": "AI Orchestrator Starter",
+  "description": "Quickly plug this repo into the Telegram AI Grooming flow.",
+  "iconName": "octicon robot",
+  "categories": [
+    "Automation",
+    "AI"
+  ]
+}
